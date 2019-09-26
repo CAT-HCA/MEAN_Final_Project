@@ -3,10 +3,7 @@ var userService = require("../services/userService");
 
 var UserController = {};
 
-// GET http://localhost:3000/users/register
-UserController.getRegister = (req, res) => {
-	res.render("register", { title: "Register" });
-};
+
 
 // POST http://localhost:3000/users/register
 UserController.register = (req, res) => {
@@ -28,10 +25,7 @@ UserController.register = (req, res) => {
 		});
 };
 
-// GET: http://localhost:3000/users/login 
-UserController.getLogin = (req, res) => {
-    res.render("login", { title: "Login" });
-};
+
 
 // POST: http://localhost:3000/users/login
 UserController.login = (req, res) => {
@@ -53,10 +47,7 @@ UserController.login = (req, res) => {
 		});
 };
 
-// GET http://localhost:3000/users/profile
-UserController.getProfile = (req, res) => {
-	res.render("profile", { title: "Profile" });
-};
+
 
 // PUT http://localhost:3000/users/update
 UserController.update = (req, res) => {
