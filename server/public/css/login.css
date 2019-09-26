@@ -1,0 +1,4 @@
+/* hiding error msg div*/
+#userNotFoundDiv{
+    display: none;
+}

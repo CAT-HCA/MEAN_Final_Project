@@ -1,0 +1,26 @@
+[
+    {
+        "user_name": "Admin",
+        "password": "password",
+        "email": "admin@test.com",
+        "is_admin": 1
+    },
+    {
+        "user_name": "Foo",
+        "password": "password",
+        "email": "testing@123.com",
+        "is_admin": 0
+    },
+    {
+        "user_name": "Biz",
+        "password": "password",
+        "email": "biz@test.com",
+        "is_admin": 0
+    },
+    {
+        "user_name": "BandDirector",
+        "password": "password",
+        "email": "test@test.com",
+        "is_admin": 1
+    }
+]

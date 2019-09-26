@@ -1,0 +1,26 @@
+{
+    "development": {
+        "username": "hca",
+        "password": "password",
+        "database": "hca",
+        "host": "localhost",
+        "dialect": "postgres",
+        "operatorsAliases": false
+    },
+    "test": {
+        "username": "hca",
+        "password": "password",
+        "database": "hca",
+        "host": "localhost",
+        "dialect": "postgres",
+        "operatorsAliases": false
+    },
+    "production": {
+        "username": "hca",
+        "password": "password",
+        "database": "hca",
+        "host": "localhost",
+        "dialect": "postgres",
+        "operatorsAliases": false
+    }
+}
