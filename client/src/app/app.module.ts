@@ -12,7 +12,8 @@ import { LoginComponent } from './login/login.component';
 
 
 const appRoutes: Routes = [
-  {path: '', component: IndexComponent}
+  {path: '', component: IndexComponent},
+  {path: 'users/login', component: LoginComponent}
 ];
 
 @NgModule({
