@@ -1,0 +1,17 @@
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.fab {
+	color: white;
+}
+
+.fab:hover {
+	color: #7c878e;
+}
+
+#followSoc {
+	font-size: 30px;
+}

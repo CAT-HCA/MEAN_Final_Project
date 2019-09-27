@@ -1,1 +1,88 @@
-/* You can add global styles to this file, and also import other style files */
+/*font classes*/
+.montserratFont {
+	font-family: "Montserrat", sans-serif;
+}
+
+.arialFont {
+	font-family: arial, sans-serif;
+}
+
+.cardBodyText {
+	font-size: 12px;
+}
+
+/* hiding registered user-only nav links*/
+#sectionDashLink, #logoutLink{
+	display: none;
+}
+
+/* formatting for footer*/
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin-bottom: 180px;
+	min-height: 100%;
+}
+
+
+.fab {
+	color: white;
+}
+
+.fab:hover {
+	color: #7c878e;
+}
+
+#followSoc {
+	font-size: 30px;
+}
+
+.sidebar {
+	min-height: 100%;
+	left: 0;
+	background-color: #182a60;
+	padding-top: 10px;
+}
+
+.row {
+	margin-left: -15px !important;
+	margin-right: -15px !important;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media screen and (max-width: 600px) {
+	.sidebar {
+		margin-bottom: 0px;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	.sidebar {
+		margin-bottom: 0px;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+	.sidebar {
+		margin-bottom: 0px;
+	}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	.sidebar {
+		margin-bottom: -200px;
+	}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	.sidebar {
+		margin-bottom: -200px;
+	}
+}
