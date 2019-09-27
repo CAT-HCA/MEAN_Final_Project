@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{> head}}
+    <!-- linking custom site CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+
+</head>
+
+<body class="w-100 bg-light">
+    {{> nav}}
+
+    <!-- MAIN CONTENT -->
+    <div class="col-xs-12 col-md-5 mx-auto container-fluid">
+        <div id="editSectionDiv" class="mx-auto">
+            <form id="editSectionForm">
+                <fieldset class="border border-primary rounded p-2 my-3">
+                    <legend class="text-center w-25">{{title}}</legend>
+                    <div class="row form-group">
+                        <div class="col-12 form-check">
+                            <label for="loginUsername">Username:</label>
+                            <input class="form-control" id="loginUsername" name="username" type="text">
+                        </div>
+                        <div class="col-12 form-check">
+                            <label for="loginPassword">Password:</label>
+                            <input class="form-control" id="loginPassword" name="password" type="password">
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group text-center">
+                    <input class="btn btn-primary my-3" type="button" id="loginBtn" value="Login">
+                    <input class="btn btn-danger my-3" type="button" id="loginResetBtn" value="Reset">
+                </div>
+            </form>
+            <div class="container mx-auto">
+                <div id="errorMessageDiv" class="mx-auto p-3">
+                    <ul id="errorMessages">
+                    </ul>
+                </div>
+                <div id="userNotFoundDiv">
+                    <p class="m-2">Invalid credentials, please try again. If you don't already have a username, please register here.</p>
+                    <div class="text-center">
+                        <input class="btn btn-primary my-1" type="button" id="goToRegBtn" value="Register">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END OF MAIN CONTENT -->
+    {{> footer}}
+    {{> scripts}}
+    <script src="/js/login.js"></script>
+
+</body>
+
+</html>
