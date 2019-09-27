@@ -11,10 +11,12 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 
 import { UserService } from './providers/user.service';
+import { RegisterComponent } from './register/register.component';
 
 const appRoutes: Routes = [
   {path: '', component: IndexComponent},
-  {path: 'users/login', component: LoginComponent}
+  {path: 'users/login', component: LoginComponent},
+  {path: 'users/register', component: RegisterComponent}
 ];
 
 @NgModule({
@@ -23,7 +25,8 @@ const appRoutes: Routes = [
     NavComponent,
     IndexComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
