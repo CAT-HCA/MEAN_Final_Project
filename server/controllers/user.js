@@ -40,15 +40,15 @@ UserController.getData = (req, res) => {
 		});
 };
 
-// registering new user (username & email, unique)
-//params: pass user object of username(string), password(string), email(string), is_admin(boolean)
+// registering new user (user_name & email, unique)
+//params: pass user object of user_name(string), password(string), email(string), is_admin(boolean)
 // POST http://localhost:3000/users/register
 UserController.register = (req, res) => {
 	console.log("in user controller");
 	userService
 		.register({
 			//req user data
-			user_name: req.body.username,
+			user_name: req.body.user_name,
 			password: req.body.password,
 			email: req.body.email,
 			is_admin: req.body.is_admin,
@@ -67,14 +67,14 @@ UserController.register = (req, res) => {
 };
 
 // logging in user
-//params: pass user object of username(string), password(string)
+//params: pass user object of user_name(string), password(string)
 // POST: http://localhost:3000/users/login
 UserController.login = (req, res) => {
 	console.log("in login user controller");
 	userService
 		.login({
 			//req user data
-			user_name: req.body.username,
+			user_name: req.body.user_name,
 			password: req.body.password,
 		})
 		.then(user => {
