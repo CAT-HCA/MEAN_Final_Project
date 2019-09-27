@@ -6,29 +6,29 @@
                     <legend class="text-center w-25">Login</legend>
                     <div class="row form-group">
                         <div class="col-12 form-check">
-                            <label for="loginUsername">Username:</label>
-                            <input class="form-control" id="username" placeholder="Enter your username" type="text" [(ngModel)]="username" required autofocus>
+                            <label for="user_name">Username:</label>
+                            <input class="form-control" id="user_name" placeholder="Enter your username" type="text" name="user_name" [(ngModel)]="user_name" required autofocus>
                         </div>
                         <div class="col-12 form-check">
-                            <label for="loginPassword">Password:</label>
-                            <input class="form-control" id="password" type="password" placeholder="Enter your password" required [(ngModel)]="password">
+                            <label for="password">Password:</label>
+                            <input class="form-control" id="password" type="password" name="password" placeholder="Enter your password" required [(ngModel)]="password">
                         </div>
                     </div>
                 </fieldset>
                 <div class="form-group text-center">
-                    <button type="button" class="btn btn-primary my-3" (click)="onLogin()">Login</button>
-                    <input class="btn btn-danger my-3" type="reset" value="Reset">
+                    <button type="button" class="btn btn-primary m-3" (click)="onLogin()">Login</button>
+                    <input class="btn btn-danger m-3" type="reset" value="Reset">
                 </div>
             </form>
             <div class="container mx-auto">
-                <div id="errorMessageDiv" class="mx-auto p-3 bg-success border border-success rounded w-100">
+                <div *ngIf="errMess" class="mx-auto p-3 bg-success border border-success rounded w-100">
                     <ul id="errorMessages">
                     </ul>
                 </div>
-                <div id="userNotFoundDiv" class="bg-success border border-success rounded w-100">
+                <div *ngIf="userNotFound" class="bg-success border border-success rounded w-100">
                     <p class="m-2">Invalid credentials, please try again. If you don't already have a username, please register here.</p>
                     <div class="text-center">
-                        <a href="/users/register" class="btn btn-primary my-1" type="btn" id="goToRegBtn">Register</a>
+                        <a href="/users/register" class="btn btn-primary my-1" type="btn">Register</a>
                     </div>
                 </div>
             </div>

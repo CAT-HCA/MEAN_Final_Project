@@ -4,6 +4,7 @@ var express = require('express');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require("express-session");
+const cors = require('cors');
 
 //directing to routing files
 var usersRouter = require('./routes/users');
@@ -12,6 +13,16 @@ var teamsRouter = require('./routes/teams');
 
 var app = express();
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
+app.use(cors({
+  origin: ["http://localhost:4200"],
+  credentials: true
+}));
 
 app.use(logger('dev'));
 app.use(express.json());
