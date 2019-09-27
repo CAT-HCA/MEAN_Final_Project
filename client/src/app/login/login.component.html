@@ -7,11 +7,13 @@
                     <div class="row form-group">
                         <div class="col-12 form-check">
                             <label for="user_name">Username:</label>
-                            <input class="form-control" id="user_name" placeholder="Enter your username" type="text" name="user_name" [(ngModel)]="user_name" required autofocus>
+                            <input class="form-control" id="user_name" placeholder="Enter your username" type="text"
+                                name="user_name" [(ngModel)]="user_name" required autofocus>
                         </div>
                         <div class="col-12 form-check">
                             <label for="password">Password:</label>
-                            <input class="form-control" id="password" type="password" name="password" placeholder="Enter your password" required [(ngModel)]="password">
+                            <input class="form-control" id="password" type="password" name="password"
+                                placeholder="Enter your password" required [(ngModel)]="password">
                         </div>
                     </div>
                 </fieldset>
@@ -21,15 +23,8 @@
                 </div>
             </form>
             <div class="container mx-auto">
-                <div *ngIf="errMess" class="mx-auto p-3 bg-success border border-success rounded w-100">
-                    <ul id="errorMessages">
-                    </ul>
-                </div>
-                <div *ngIf="userNotFound" class="bg-success border border-success rounded w-100">
-                    <p class="m-2">Invalid credentials, please try again. If you don't already have a username, please register here.</p>
-                    <div class="text-center">
-                        <a href="/users/register" class="btn btn-primary my-1" type="btn">Register</a>
-                    </div>
+                <div *ngIf="loginError" class="mx-auto p-3 bg-success border border-success rounded w-100">
+                    <p>{{errMsg}}</p>
                 </div>
             </div>
         </div>
