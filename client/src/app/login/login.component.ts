@@ -27,13 +27,15 @@ export class LoginComponent implements OnInit {
   onLogin(): void {
     this.loginError = false;
     if (this.user_name === '' || this.password === '') {
-      this.errMsg = 'User Name and Password are required.';
       this.loginError = true;
+      this.errMsg = 'Username and password are required fields';
     } else {
+      this.loginError = false;
+      this.errMsg = '';
       // call login() method in AuthService to validate login creds
       this.userService.login(this.user_name, this.password).subscribe(data => {
         console.log(data);
-        if (data.success == false) {
+        if (data['error']) {
           this.errMsg = 'Login unsuccessful.';
           this.loginError = true;
         } else {
