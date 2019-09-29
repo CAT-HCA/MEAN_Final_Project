@@ -10,43 +10,44 @@ import { UserService } from './../providers/user.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private userService: UserService, private router: Router) { };
-
   user_name: string = '';
   password: string = '';
   confpassword: string = '';
   email: string = '';
+  dupId: boolean = false;
 
 
   errMsg: Array<string> = [];
   registerError: boolean = false;
-  dupId: boolean = false;
 
 
+  constructor(private userService: UserService, private router: Router) { };
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   onRegister(): void {
-    this.errMsg = [];
+    console.log("in register function");
+    console.log(this.user_name, this.password, this.confpassword, this.email);
     this.registerError = false;
     if (this.user_name === '' || this.password === '' || this.confpassword === '' || this.email === '') {
-      this.registerError = true;
       this.errMsg.push("Please fill out all fields");
     }
-    if (this.password !== this.confpassword) {
+    if (this.password != this.confpassword) {
       this.errMsg.push("Passwords do not match");
     }
     if (this.errMsg.length > 0) {
       this.registerError = true;
     } else {
+      console.log("about to submit register")
+      this.registerError = false;
+      this.dupId = false;
       // call login() method in AuthService to validate login creds
-      this.userService.login(this.user_name, this.password).subscribe(data => {
-        console.log(data);
-        if (data["error"]) {
-          this.dupId = true;
+      this.userService.register(this.user_name, this.password, this.email).subscribe(data => {
+        if (data['error']) {
+          this.errMsg.push("Unable to register user.");
+          this.registerError = true;
         } else {
-          this.router.navigate(["leagues"]);
+          this.router.navigate(['users/login']);
         }
       });
     }

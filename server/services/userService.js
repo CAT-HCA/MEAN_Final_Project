@@ -26,7 +26,7 @@ userService.listUser = id => {
 };
 
 userService.register = userObj => {
-	console.log(userObj);
+	console.log("made it to register userService");
 	return User.create(userObj)
 		.then(user => {
 			return user;
@@ -37,7 +37,7 @@ userService.register = userObj => {
 };
 
 userService.login = userObj => {
-	console.log("made it to userService");
+	console.log("made it to login userService");
 	return User.findOne({
 		where: userObj,
 	})

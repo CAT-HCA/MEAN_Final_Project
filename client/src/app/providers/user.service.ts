@@ -18,11 +18,11 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   login(user_name: string, password: string) : Observable<any> {
-    return this.http.post(`${this.usersEndpoint}login`, {user_name : user_name, password : password}, this.httpOptions)
+    return this.http.post(`${this.usersEndpoint}login`, {user_name: user_name, password: password}, this.httpOptions)
       .pipe(map(res => <any[]>res));
-  }
+  };
   register(user_name: string, password: string, email: string) : Observable<any> {
-    return this.http.post(`${this.usersEndpoint}register`, {user_name : user_name, password : password, email : email}, this.httpOptions)
+    return this.http.post(`${this.usersEndpoint}register`, {user_name: user_name, password: password, email: email}, this.httpOptions)
       .pipe(map(res => <any[]>res));
   }
 }
