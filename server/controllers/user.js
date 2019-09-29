@@ -51,7 +51,7 @@ UserController.register = (req, res) => {
 			user_name: req.body.user_name,
 			password: req.body.password,
 			email: req.body.email,
-			is_admin: req.body.is_admin,
+			is_admin: 0,
 		})
 		.then(user => {
 			if (user) {
