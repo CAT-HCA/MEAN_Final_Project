@@ -5,37 +5,37 @@
                 <legend class="text-center w-25">Register</legend>
                 <div class="row form-group">
                     <div class="col-12 form-check">
-                        <label for="username">Username:</label>
-                        <input class="form-control" id="username" name="username" type="text">
+                        <label for="user_name">Username:</label>
+                        <input class="form-control" id="user_name" name="user_name" type="text" [(ngModel)]="user_name" required autofocus>
                     </div>
                     <div class="col-12 form-check">
                         <label for="password">Password:</label>
-                        <input class="form-control" id="password" name="password" type="password">
+                        <input class="form-control" id="password" name="password" type="password" required [(ngModel)]="password">
                     </div>
                     <div class="col-12 form-check">
                         <label for="confpassword">Confirm Password:</label>
-                        <input class="form-control" id="confpassword" name="confpassword" type="password">
+                        <input class="form-control" id="confpassword" name="confpassword" type="password" [(ngModel)]="confpassword" required >
                     </div>
                     <div class="col-12 form-check">
                         <label for="email">Email:</label>
-                        <input class="form-control" id="email" name="email" type="text">
+                        <input class="form-control" id="email" name="email" type="text" required [(ngModel)]="email">
                     </div>
                 </div>
             </fieldset>
             <div class="form-group text-center">
-                <input class="btn btn-primary my-3" type="button" id="regBtn" value="Register" (click)="onRegister()">
+                <button class="btn btn-primary my-3" type="btn" (click)="onRegister()" >Register</button>
                 <input class="btn btn-danger m-3" type="reset" value="Reset">
             </div>
         </form>
         <div class="container mx-auto">
             <div class="container mx-auto">
-                <div *ngIf="loginError" class="mx-auto p-3 bg-success border border-success rounded w-100">
+                <div *ngIf="registerError" role="alert" class="mx-auto p-3 bg-success border border-success rounded w-100">
                     <ul>
                         <li *ngFor="let error of errMsg">{{errMsg}}</li>
                     </ul>
                 </div>
             </div>
-            <div *ngIf="dupId" class="bg-success border border-success rounded">
+            <div *ngIf="dupId" role="alert" class="bg-success border border-success rounded">
                 <p class="m-2">An account has already been created with this username and/or email. Click here to go
                     to the login page.</p>
                 <div class="text-center">

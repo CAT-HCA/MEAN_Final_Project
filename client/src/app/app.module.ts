@@ -9,9 +9,10 @@ import { NavComponent } from './nav/nav.component';
 import { IndexComponent } from './index/index.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 import { UserService } from './providers/user.service';
-import { RegisterComponent } from './register/register.component';
+
 
 const appRoutes: Routes = [
   {path: '', component: IndexComponent},

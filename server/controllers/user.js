@@ -44,7 +44,7 @@ UserController.getData = (req, res) => {
 //params: pass user object of user_name(string), password(string), email(string), is_admin(boolean)
 // POST http://localhost:3000/users/register
 UserController.register = (req, res) => {
-	console.log("in user controller");
+	console.log("in register user controller");
 	userService
 		.register({
 			//req user data
