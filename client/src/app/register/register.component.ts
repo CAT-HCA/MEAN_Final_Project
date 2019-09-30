@@ -47,6 +47,7 @@ export class RegisterComponent implements OnInit {
         if (data['error']) {
           this.errMsg.push("Unable to register user.");
           this.registerError = true;
+          this.dupId = true;
         } else {
           this.router.navigate(['users/login']);
         }

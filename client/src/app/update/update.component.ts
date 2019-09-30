@@ -26,11 +26,7 @@ export class UpdateComponent implements OnInit {
     // get id from Query Params
     // Subscribe to Observable
     // pass anonymous callback function to subscribe method
-    this.sub = this.route
-      .queryParams
-      .subscribe(params => {
-        this.id = params['id'];
-      });
+
     this.userService.getUser(this.id).subscribe(data => {
       this.email = data.email;
       this.user_name = data.user_name;
@@ -63,6 +59,4 @@ export class UpdateComponent implements OnInit {
       }
     });
   };
-
-
 }

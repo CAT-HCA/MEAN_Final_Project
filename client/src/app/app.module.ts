@@ -5,6 +5,8 @@ import { Routes, RouterModule }  from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { UserService } from './providers/user.service';
+import { LeagueService } from './providers/league.service';
+import { TeamService } from './providers/team.service';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -14,13 +16,15 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AdminComponent } from './admin/admin.component';
 import { UpdateComponent } from './update/update.component';
+import { LeaguesComponent } from './leagues/leagues.component';
 
 const appRoutes: Routes = [
   {path: '', component: IndexComponent},
   {path: 'users/login', component: LoginComponent},
   {path: 'users/register', component: RegisterComponent},
   {path: 'users/admin', component: AdminComponent},
-  {path: 'users/update', component: UpdateComponent}
+  {path: 'users/update', component: UpdateComponent},
+  {path: 'leagues', component: LeaguesComponent}
 ];
 
 @NgModule({
@@ -32,7 +36,8 @@ const appRoutes: Routes = [
     LoginComponent,
     RegisterComponent,
     AdminComponent,
-    UpdateComponent
+    UpdateComponent,
+    LeaguesComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [UserService],
+  providers: [UserService, LeagueService, TeamService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

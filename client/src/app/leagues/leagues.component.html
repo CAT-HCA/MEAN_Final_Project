@@ -1,0 +1,70 @@
+<!-- Side Nav Bar -->
+<div class="row container-fluid">
+    <div class="sidebar col-lg-3 col-xs-12">
+        <form>
+            <div class="mx-auto">
+                <p class="montserratFont text-white text-center mt-2">Actions:</p>
+                <hr class="bg-white">
+                <div class="text-center">
+                    <a class="text-white text-center btn btn-danger my-2" href="add_section.html">Add a
+                        New
+                        Section</a>
+
+                    <button class="text-white text-center btn btn-secondary my-2">Show All
+                        Sections</button>
+                </div>
+            </div>
+            <div class="mx-auto">
+                <p class="montserratFont text-white text-center">Filter Results By:</p>
+                <hr class="bg-white">
+            </div>
+            <div>
+                <div class="form-group text-secondary text-center w-75 mx-auto">
+                    <!--Drop down for selecting a section-->
+                    <label for="leagueDropDown" class="text-white">INSTRUMENT FAMILY</label>
+                    <select class="form-control" name="leagueDropDown">
+                        <option value="-1">Choose a Family</option>
+                        <option *ngFor="let league of leagues">{{league.Name}}</option>
+                    </select>
+                    <div class="text-center"><br>-- or --</div>
+                </div>
+                <div class="form-group text-secondary text-center w-75 mx-auto">
+                    <!--Drop down for selecting a section-->
+                    <label for="sectionDropDown" class="text-white">SECTION</label>
+                    <select class="form-control" name="sectionDropDown">
+                        <option>Choose a Section</option>
+                        <option *ngFor="let team of teams">{{team.TeamName}}</option>
+                    </select>
+                    <div class="text-center"><br>-- or --</div>
+                </div>
+                <div class="form-group text-secondary text-center w-75 mx-auto mb-4">
+                    <!--Drop down for selecting a section-->
+                    <label for="managerDropDown" class="text-white">SECTION LEADER</label>
+                    <select class="form-control" name="managerDropDown">
+                        <option>Choose a Section Leader</option>
+                        <option *ngFor="let team of teams">{{team.ManagerName}}</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- end of Side Nav Bar -->
+    <div class="col-xs-12 col-lg-9 mx-auto container-fluid">
+        <div class="text-center">
+            <h2 *ngIf="noSections" class="montserratFont mt-5">There are currently no registered Sections</h2>
+            <div *ngFor="let team of teams" class="card col-12 col-md-6 col-xl-3 float-left m-4 .d-flex">
+                <img class="card-img-top cardImages" src="/assets/images/section_photos/{{team.Picture}}"
+                    alt="Marching Band Member">
+                <div class="card-header">
+                    <h2 class="card-title">{{team.TeamName}}</h2>
+                </div>
+                <div class="list-group">
+                    <p class="font-weight-bold">Section Leader:</p>
+                    <p>{{team.ManagerName}}</p>
+                </div>
+                <div class="card-body text-center"><a class="btn btn-sm text-white btn-info col-9 cardBodyText mx-2"
+                        disabled>Manage Section</a></div>
+            </div>
+        </div>
+    </div>
+</div>
