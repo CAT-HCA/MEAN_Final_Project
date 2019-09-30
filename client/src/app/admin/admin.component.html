@@ -1,1 +1,21 @@
-<p>admin works!</p>
+<h1>User Admin</h1>
+<hr>
+<h2>Current Users</h2>
+<div class="container" id="usersDiv">
+    <table class="table table-striped">
+        <thead>
+            <td>Username</td>
+            <td>Email</td>
+            <td>Admin?</td>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td class="text-black">{{user.user_name}}</td>
+                <td class="text-black">{{user.email}}</td>
+                <td class="text-black">{{user.is_admin}}</td>
+                <td class="text-black"><i class="fas fa-pencil-alt"></i>&nbsp;Edit</td>
+                <td class="text-black"><i class="far fa-trash-alt"></i>&nbsp;Delete</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
