@@ -4,20 +4,21 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule }  from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
+import { UserService } from './providers/user.service';
+
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { IndexComponent } from './index/index.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-
-import { UserService } from './providers/user.service';
-
+import { AdminComponent } from './admin/admin.component';
 
 const appRoutes: Routes = [
   {path: '', component: IndexComponent},
   {path: 'users/login', component: LoginComponent},
-  {path: 'users/register', component: RegisterComponent}
+  {path: 'users/register', component: RegisterComponent},
+  {path: 'users/admin', component: AdminComponent}
 ];
 
 @NgModule({
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     IndexComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
