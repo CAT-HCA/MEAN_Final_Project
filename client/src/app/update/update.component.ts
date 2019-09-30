@@ -36,7 +36,6 @@ export class UpdateComponent implements OnInit {
       this.user_name = data.user_name;
     });
   };
-
   onUpdate(): void {
     // call login() method in AuthService to validate login creds
     this.userService.updateUser(this.id, this.email).subscribe(data => {
@@ -47,6 +46,20 @@ export class UpdateComponent implements OnInit {
         this.email = this.email;
         this.errMsg.push("Email Successfully Updated");
         this.updateError = true;
+      }
+    });
+  };
+  onReqDel(): void {
+    this.deleteRequest = true;
+  };
+  onDelConf(): void {
+    // call login() method in AuthService to validate login creds
+    this.userService.delete(this.id).subscribe(data => {
+      if (data['error']) {
+        this.errMsg.push("Unable to delete your account.");
+        this.updateError = true;
+      } else {
+        this.router.navigate(['/']);
       }
     });
   };

@@ -38,7 +38,7 @@ export class UserService {
       .pipe(map(res => <any[]>res));
   }
   delete(id: number): Observable<any> {
-    return this.http.put(`${this.usersEndpoint}delete/${id}`, this.httpOptions)
+    return this.http.delete(`${this.usersEndpoint}delete/${id}`, this.httpOptions)
       .pipe(map(res => <any[]>res));
   };
 }
