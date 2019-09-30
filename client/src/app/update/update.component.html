@@ -6,8 +6,7 @@
                 <div class="row form-group">
                     <div class="col-12 form-check">
                         <label for="updateEmail">Email:</label>
-                        <input class="form-control" name="email" type="text" value="{{user.email}}"
-                            [(ngModel)]="email">
+                        <input class="form-control" name="email" type="text" value="{{user.email}}" [(ngModel)]="email">
                     </div>
                 </div>
             </fieldset>
@@ -19,7 +18,7 @@
         <div class="container mx-auto">
             <div class="container mx-auto">
                 <div class="container mx-auto">
-                    <div *ngIf="updateError" role="alert"
+                    <div *ngIf="updateError" role="alert">
                         class="mx-auto p-3 bg-success border border-success rounded w-100">
                         <ul>
                             <li *ngFor="let error of errMsg">{{errMsg}}</li>
@@ -29,9 +28,11 @@
                 <div *ngIf="deleteRequest" role="alert" class="bg-success border border-success rounded">
                     <p class="m-2">Are you sure you want to delete your account?</p>
                     <div class="text-center">
-                        <button class="btn btn-danger my-3" type="btn" (click)="onDelConf()">Confirm Delete Account</button>
+                        <button class="btn btn-danger my-3" type="btn" (click)="onDelConf()">Confirm Delete
+                            Account</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
