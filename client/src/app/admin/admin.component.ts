@@ -21,6 +21,11 @@ export class AdminComponent implements OnInit {
     // call getUsers() method in userService
     this.userService.getUsers().subscribe((data) => {
       data.forEach((user, index) => {
+        if(user.is_admin == 1){
+          user.is_admin = "Y";
+        } else {
+          user.is_admin = "N";
+        }
         this.users.push(new User(user.id, user.user_name, user.password, user.email, user.is_admin));
       })
     });
