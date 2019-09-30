@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { UserService } from './../providers/user.service';
+import { AuthService } from '../providers/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   // create instance of AuthService
   constructor(
-    private userService: UserService,
+    private userService: UserService, private authService: AuthService,
     private router: Router) { }
 
 
@@ -36,10 +37,20 @@ export class LoginComponent implements OnInit {
       this.userService.login(this.user_name, this.password).subscribe(data => {
         console.log(data);
         if (data['error']) {
+          this.authService.setAuth(false);
           this.errMsg = 'Login unsuccessful.';
           this.loginError = true;
         } else {
           this.loginError = false;
+          this.authService.setAuth(true);
+          if (data.is_admin == 0) {
+            this.authService.setAdmin(false);
+          }
+          else {
+            this.authService.setAdmin(true);
+          };
+          console.log(this.authService.getAdmin());
+          console.log(this.authService.getAuth());
           // load mountains "page"
           this.router.navigate(['/']);
         }

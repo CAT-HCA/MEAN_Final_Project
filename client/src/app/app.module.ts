@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './providers/user.service';
 import { LeagueService } from './providers/league.service';
 import { TeamService } from './providers/team.service';
+import { AuthService } from './providers/auth.service';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -45,7 +46,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [UserService, LeagueService, TeamService],
+  providers: [UserService, LeagueService, TeamService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
