@@ -1,22 +1,24 @@
 <h1>User Admin</h1>
 <hr>
 <h2>Current Users</h2>
-<div class="container" id="usersDiv">
+<div class="container w-75" id="usersDiv">
     <table class="table table-striped">
         <thead>
             <td>ID</td>
             <td>Username</td>
             <td>Email</td>
-            <td>Admin?</td>
+            <td class="text-center">Admin?</td>
+            <td class="text-center">Edit</td>
+            <td class="text-center">Delete</td>
         </thead>
         <tbody>
             <tr *ngFor="let user of users">
                 <td class="text-black">{{user.id}}</td>
                 <td class="text-black">{{user.user_name}}</td>
                 <td class="text-black">{{user.email}}</td>
-                <td class="text-black">{{user.is_admin}}</td>
-                <td class="text-black"><i class="fas fa-pencil-alt"></i>&nbsp;Edit</td>
-                <td class="text-black"><i class="far fa-trash-alt"></i>&nbsp;Delete</td>
+                <td class="text-black text-center">{{user.is_admin}}</td>
+                <td class="text-black text-center"><i class="fas fa-pencil-alt"></i></td>
+                <td class="text-black text-center"><i class="far fa-trash-alt"></i></td>
             </tr>
         </tbody>
     </table>

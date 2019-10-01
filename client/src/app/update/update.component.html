@@ -2,11 +2,11 @@
     <div class="mx-auto">
         <form>
             <fieldset class="border border-primary rounded p-2 my-3">
-                <legend class="text-center w-50">Username: {{user_name}}</legend>
+                <legend class="text-center w-50">Username: {{this.user_name}}</legend>
                 <div class="row form-group">
                     <div class="col-12 form-check">
                         <label for="updateEmail">Email:</label>
-                        <input class="form-control" name="email" type="text" value="{{user.email}}" [(ngModel)]="email">
+                        <input class="form-control" name="email" type="text" value={{user.email}} [(ngModel)]="email">
                     </div>
                 </div>
             </fieldset>
@@ -18,11 +18,8 @@
         <div class="container mx-auto">
             <div class="container mx-auto">
                 <div class="container mx-auto">
-                    <div *ngIf="updateError" role="alert">
-                        class="mx-auto p-3 bg-success border border-success rounded w-100">
-                        <ul>
-                            <li *ngFor="let error of errMsg">{{errMsg}}</li>
-                        </ul>
+                    <div *ngIf="updateError" role="alert" class="mx-auto p-3 bg-success border border-success rounded w-100">
+                            <p>{{errMsg}}</p>
                     </div>
                 </div>
                 <div *ngIf="deleteRequest" role="alert" class="bg-success border border-success rounded">

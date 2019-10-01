@@ -20,15 +20,15 @@ export class AuthService {
 
     setAuth(isAuth: boolean): void {
         this.isAuthenticated = isAuth;
-    }
+    };
     getAuth(): boolean {
         return this.isAuthenticated;
-    }
+    };
     setAdmin(isAdmin: boolean): void {
         this.isAdmin = isAdmin;
-    }
+    };
     getAdmin(): boolean {
         return this.isAdmin;
-    }
+    };
 
 }

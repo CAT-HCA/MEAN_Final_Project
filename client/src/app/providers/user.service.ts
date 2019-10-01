@@ -15,6 +15,8 @@ export class UserService {
     withCredentials: true
   };
 
+  loginUserId: number = 0;
+
   constructor(private http: HttpClient) { }
   getUsers(): Observable<any> {
     return this.http.get(`${this.usersEndpoint}data`, this.httpOptions)
