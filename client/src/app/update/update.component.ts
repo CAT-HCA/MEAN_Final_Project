@@ -25,9 +25,9 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit() {
     // Redirect to Login Page if not Authenticated
-    if (!this.authService.getAuth()) {
-      this.router.navigate(['users/login']);
-    }
+   // if (!this.authService.getAuth()) {
+      //this.router.navigate(['users/login']);
+   // }
     // call get user method to return 1 user by id
     // pass in id param
     this.userService.getUser(this.userService.loginUserId).subscribe(data => {
@@ -49,6 +49,9 @@ export class UpdateComponent implements OnInit {
   };
   onReqDel(): void {
     this.deleteRequest = true;
+  };
+  onDelCancel(): void {
+    this.deleteRequest = false;
   };
   onDelConf(): void {
     // call login() method in AuthService to validate login creds

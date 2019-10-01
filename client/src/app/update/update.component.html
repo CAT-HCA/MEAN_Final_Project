@@ -11,8 +11,8 @@
                 </div>
             </fieldset>
             <div class="form-group text-center">
-                <button class="btn btn-primary my-3" type="btn" (click)="onUpdate()">Update Email</button>&nbsp;
-                <button class="btn btn-danger my-3" type="btn" (click)="onReqDel()">Delete Account</button>
+                <button class="btn btn-primary" type="btn" (click)="onUpdate()">Update Email</button>&nbsp;
+                <button class="btn btn-danger" type="btn" (click)="onReqDel()">Delete Account</button>
             </div>
         </form>
         <div class="container mx-auto">
@@ -25,8 +25,9 @@
                 <div *ngIf="deleteRequest" role="alert" class="bg-success border border-success rounded">
                     <p class="m-2">Are you sure you want to delete your account?</p>
                     <div class="text-center">
-                        <button class="btn btn-danger my-3" type="btn" (click)="onDelConf()">Confirm Delete
-                            Account</button>
+                        <button class="btn btn-danger" type="btn" (click)="onDelConf()">Confirm Delete
+                            Account</button>&nbsp;
+                        <button class="btn btn-primary" type="btn" (click)="onDelCancel()">Don't Delete!</button>
                     </div>
                 </div>
             </div>

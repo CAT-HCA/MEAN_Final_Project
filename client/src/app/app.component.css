@@ -1,0 +1,14 @@
+/* formatting for footer*/
+html {
+	position: relative;
+    min-height: 100%;
+}
+body {
+	margin-bottom: 200px;
+	min-height: 100%;
+}
+footer {
+	position: absolute;
+	bottom: 0;
+    width: 100%;
+}
