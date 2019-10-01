@@ -92,7 +92,7 @@ UserController.login = (req, res) => {
 };
 
 // updating user email address
-//params: pass user object of id(integer) from query params, email(string)
+//params: email(string)
 // PUT http://localhost:3000/users/update/{id}
 UserController.update = (req, res) => {
 	//req user data
@@ -114,7 +114,7 @@ UserController.update = (req, res) => {
 };
 
 //deleting user
-//params: pass id(integer) from query params
+//params: pass id(integer)
 // DELETE: http://localhost:3000/users/{id}
 UserController.delete = (req, res) => {
 	userService

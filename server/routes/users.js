@@ -2,7 +2,7 @@ var express = require("express");
 const api = require("../controllers/user");
 var router = express.Router();
 
-// GET http://localhost:3000/users/data/{id}
+// GET http://localhost:3000/users/data
 router.get("/data/", api.getAllData);
 
 // GET http://localhost:3000/users/data/{id}
