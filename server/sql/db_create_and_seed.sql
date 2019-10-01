@@ -1,6 +1,6 @@
-create database hca;
 use hca;
 
+drop table USERS;
 create table USERS (
 	id		 	int(10) NOT NULL AUTO_INCREMENT, 
 	user_name 	varchar(255) NOT NULL, 
@@ -14,6 +14,11 @@ create table USERS (
 	PRIMARY KEY(ID)
 );
 
-INSERT INTO Users (user_name, email, password, is_admin) VALUES ('Admin', 'admin@test.com', 'password', 1);
-
-select * from USERS;
+#insert into USERS (user_name, email, password, is_admin) values ('Admin', 'Admin@test.com', 'password', 1);
+#insert into USERS (user_name, email, password, is_admin) values ('user', 'user@test.com', 'password', 0);
+#insert into USERS (user_name, email, password, is_admin) values ('userDelete', 'delete@test.com', 'password', 0);
+#SELECT * FROM USERS;
+#SELECT * FROM USERS WHERE user_name = 'user';
+#SELECT * FROM USERS WHERE is_admin = '0';
+#UPDATE USERS SET email = 'abc@123.com' WHERE id = 3;
+#DELETE FROM USERS WHERE id =  '3';
