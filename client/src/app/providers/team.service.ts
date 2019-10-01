@@ -16,7 +16,8 @@ export class TeamService {
   };
 
   constructor(private http: HttpClient) { }
-
+  //Get to return team data, no params
+  // GET: http://localhost:3000/teams/data
   getTeams(): Observable<any> {
     return this.http.get(`${this.usersEndpoint}data`, this.httpOptions)
       .pipe(map(res => <any[]>res));

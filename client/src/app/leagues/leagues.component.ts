@@ -31,14 +31,14 @@ export class LeaguesComponent implements OnInit {
 
   ngOnInit() {
     // Redirect to Login Page if not Authenticated
-   if (!this.authService.getAuth()) {
+    if (!this.authService.getAuth()) {
       this.router.navigate(['users/login']);
-   }
-
+    }
+    //calling League service to get league data
     this.leagueService.getLeagues().subscribe(data => {
       this.leagues = data;
-
     });
+    //calling team service to get team data
     this.teamService.getTeams().subscribe(data => {
       this.teams = data;
     });

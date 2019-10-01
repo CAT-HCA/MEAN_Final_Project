@@ -1,4 +1,3 @@
-<!--START NAV BAR-->
 <nav class="navbar navbar-dark navbar-expand-md p-1 px-md-4 border-bottom shadow-sm bg-warning">
     <span class="navbar-brand mb-0 h1">
         <a class="navHome" (click)="goHome()"><img class="ml-2" src="/assets/images/uconn-wordmark-single-white.png"
@@ -11,12 +10,11 @@
         <div class="navbar-nav">
             <a class="nav-item nav-link p-2 mr-2 montserratFont" (click)="goLogin()" *ngIf="!isAuth()">Login</a>
             <a class="nav-item nav-link p-2 mr-2 montserratFont" (click)="goRegister()" *ngIf="!isAuth()">Register</a>
-            <a class="nav-item nav-link p-2 mr-2 montserratFont" (click)="goLeagues()" *ngIf="isAuth()">Section Dashboard</a>
+            <a class="nav-item nav-link p-2 mr-2 montserratFont" (click)="goLeagues()" *ngIf="isAuth()">Section
+                Dashboard</a>
             <a class="nav-item nav-link p-2 mr-2 montserratFont" (click)="goUpdate()" *ngIf="isAuth()">User Profile</a>
             <a class="nav-item nav-link p-2 mr-2 montserratFont" (click)="goAdmin()" *ngIf="isAdmin()">Admin</a>
             <a class="nav-item nav-link p-2 mr-2 montserratFont" (click)="goLogout()" *ngIf="isAuth()">Log Out</a>
         </div>
     </div>
 </nav>
-<!--END NAV BAR-->
-

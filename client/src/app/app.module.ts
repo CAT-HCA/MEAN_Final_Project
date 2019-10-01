@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule }  from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
+//importing Services
 import { UserService } from './providers/user.service';
 import { LeagueService } from './providers/league.service';
 import { TeamService } from './providers/team.service';
 import { AuthService } from './providers/auth.service';
 
+//importing Components
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { IndexComponent } from './index/index.component';
@@ -19,6 +21,7 @@ import { AdminComponent } from './admin/admin.component';
 import { UpdateComponent } from './update/update.component';
 import { LeaguesComponent } from './leagues/leagues.component';
 
+//routing
 const appRoutes: Routes = [
   {path: '', component: IndexComponent},
   {path: 'users/login', component: LoginComponent},

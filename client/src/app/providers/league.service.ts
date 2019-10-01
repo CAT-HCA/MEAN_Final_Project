@@ -17,6 +17,8 @@ export class LeagueService {
 
   constructor(private http: HttpClient) { }
 
+  //Get to return league data, no params
+  // GET: http://localhost:3000/leagues/data
   getLeagues(): Observable<any> {
     return this.http.get(`${this.usersEndpoint}data`, this.httpOptions)
       .pipe(map(res => <any[]>res));

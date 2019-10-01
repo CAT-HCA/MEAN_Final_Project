@@ -22,7 +22,7 @@ export class NavComponent implements OnInit {
     return this.authService.getAdmin();
   };
 
-  // Login click event - Navigate to login page
+  // home click event - Navigate to index page
   goHome(): void {
     this.router.navigate(['/']);
   };
@@ -38,15 +38,15 @@ export class NavComponent implements OnInit {
   goLeagues(): void {
     this.router.navigate(['leagues']);
   };
-  // Leagues click event - Navigate to leagues page
+  // Update click event - Navigate to update page
   goUpdate(): void {
     this.router.navigate(['users/update']);
   };
-  // Leagues click event - Navigate to leagues page
+  // Admin click event - Navigate to admin page
   goAdmin(): void {
     this.router.navigate(['users/admin']);
   };
-  // Leagues click event - Navigate to leagues page
+  // logout click event - clears auth and Navigate to index page
   goLogout(): void {
     this.authService.setAuth(false);
     this.authService.setAdmin(false);
