@@ -30,5 +30,21 @@ h2 {
 	color: #7c878e;
 }
 
+/* formatting for footer*/
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin-bottom: 175px;
+	min-height: 100%;
+}
+footer {
+position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
 
 
