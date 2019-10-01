@@ -24,7 +24,7 @@
             </fieldset>
             <div class="form-group text-center">
                 <button class="btn btn-primary my-3" type="btn" (click)="onRegister()" >Register</button>
-                <input class="btn btn-danger m-3" type="reset" value="Reset">
+                <input class="btn btn-danger m-3" type="reset" (click)="onReset()" value="Reset">
             </div>
         </form>
         <div class="container mx-auto">
@@ -35,7 +35,7 @@
                     </ul>
                 </div>
             </div>
-            <div *ngIf="dupId" role="alert" class="bg-success border border-success rounded">
+            <div *ngIf="dupId" role="alert" class="bg-success border border-success rounded mt-4">
                 <p class="m-2">An account has already been created with this username and/or email. Click here to go
                     to the login page.</p>
                 <div class="text-center">
