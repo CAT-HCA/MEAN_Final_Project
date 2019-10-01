@@ -1,6 +1,6 @@
-use hca;
+create database HCA;
+use HCA;
 
-drop table USERS;
 create table USERS (
 	id		 	int(10) NOT NULL AUTO_INCREMENT, 
 	user_name 	varchar(255) NOT NULL, 
