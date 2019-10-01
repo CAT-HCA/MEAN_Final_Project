@@ -14,13 +14,12 @@ export class LoginComponent implements OnInit {
   password: string = '';
   private errMsg: string = '';
   loginError: boolean = false;
+  loginUserId: number = 0;
 
   // create instance of AuthService
   constructor(
     private userService: UserService, private authService: AuthService,
     private router: Router) { }
-
-
 
   ngOnInit() {
   }
@@ -37,22 +36,23 @@ export class LoginComponent implements OnInit {
       this.userService.login(this.user_name, this.password).subscribe(data => {
         console.log(data);
         if (data['error']) {
-          this.authService.setAuth(false);
           this.errMsg = 'Login unsuccessful.';
           this.loginError = true;
+          this.authService.setAuth(false);
+          this.authService.setAdmin(false);
         } else {
           this.loginError = false;
           this.authService.setAuth(true);
-          if (data.is_admin == 0) {
+          if (data.is_admin == false) {
+            this.userService.loginUserId = data.id;
             this.authService.setAdmin(false);
           }
           else {
+            this.userService.loginUserId = data.id;
             this.authService.setAdmin(true);
           };
-          console.log(this.authService.getAdmin());
-          console.log(this.authService.getAuth());
-          // load mountains "page"
-          this.router.navigate(['/']);
+          // load leagues page
+          this.router.navigate(['/leagues']);
         }
       });
     }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { UserService } from './../providers/user.service';
+import { AuthService } from './../providers/auth.service';
 import { User } from '../models/user.model';
 
 @Component({
@@ -15,22 +16,21 @@ export class AdminComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private router: Router) { }
+    private authService: AuthService,
+    private router: Router) { };
 
   ngOnInit() {
+    // Redirect to Login Page if not Authenticated and Admin
+    if (!this.authService.getAdmin()) {
+      this.router.navigate(['users/login']);
+    };
+
     // call getUsers() method in userService
     this.userService.getUsers().subscribe((data) => {
-      data.forEach((user, index) => {
-        if(user.is_admin == 1){
-          user.is_admin = "Y";
-        } else {
-          user.is_admin = "N";
-        }
-        this.users.push(new User(user.id, user.user_name, user.password, user.email, user.is_admin));
-      })
+        this.users = data;
     });
 
-  }
-}
+  };
+};
 
 

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { LeagueService } from './../providers/league.service';
 import { TeamService } from './../providers/team.service';
+import { AuthService } from './../providers/auth.service';
 
 @Component({
   selector: 'app-leagues',
@@ -24,17 +25,21 @@ export class LeaguesComponent implements OnInit {
   constructor(
     private leagueService: LeagueService,
     private teamService: TeamService,
+    private authService: AuthService,
     private router: Router
   ) { }
 
   ngOnInit() {
+    // Redirect to Login Page if not Authenticated
+    if (!this.authService.getAuth()) {
+      this.router.navigate(['login']);
+    }
+
     this.leagueService.getLeagues().subscribe(data => {
-      console.log(data);
       this.leagues = data;
 
     });
     this.teamService.getTeams().subscribe(data => {
-      console.log(data);
       this.teams = data;
     });
   }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { UserService } from './../providers/user.service';
+import { AuthService } from './../providers/auth.service';
 
 @Component({
   selector: 'app-update',
@@ -11,36 +12,37 @@ import { UserService } from './../providers/user.service';
 export class UpdateComponent implements OnInit {
 
   private sub: any;
-  private id: number = 0;
   user: Array<any> = [];
   private email: string = '';
   private user_name: string = '';
   updateError: boolean = false;
   deleteRequest: boolean = false;
-  errMsg: Array<string> = [];
+  errMsg: string = '';
 
 
-  constructor(private userService: UserService, private route: ActivatedRoute, private router: Router) { }
+
+  constructor(private userService: UserService, private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
-    // get id from Query Params
-    // Subscribe to Observable
-    // pass anonymous callback function to subscribe method
-
-    this.userService.getUser(this.id).subscribe(data => {
+    // Redirect to Login Page if not Authenticated
+    if (!this.authService.getAuth()) {
+      this.router.navigate(['users/login']);
+    }
+    // call get user method to return 1 user by id
+    // pass in id param
+    this.userService.getUser(this.userService.loginUserId).subscribe(data => {
       this.email = data.email;
       this.user_name = data.user_name;
     });
   };
   onUpdate(): void {
     // call login() method in AuthService to validate login creds
-    this.userService.updateUser(this.id, this.email).subscribe(data => {
+    this.userService.updateUser(this.userService.loginUserId, this.email).subscribe(data => {
       if (data['error']) {
-        this.errMsg.push("Unable to update email address.");
+        this.errMsg = 'Unable to update email address.';
         this.updateError = true;
       } else {
-        this.email = this.email;
-        this.errMsg.push("Email Successfully Updated");
+        this.errMsg = 'Email Successfully Updated.';
         this.updateError = true;
       }
     });
@@ -50,11 +52,13 @@ export class UpdateComponent implements OnInit {
   };
   onDelConf(): void {
     // call login() method in AuthService to validate login creds
-    this.userService.delete(this.id).subscribe(data => {
+    this.userService.delete(this.userService.loginUserId).subscribe(data => {
       if (data['error']) {
-        this.errMsg.push("Unable to delete your account.");
+        this.errMsg = 'Unable to delete your account.';
         this.updateError = true;
       } else {
+        this.authService.setAuth(false);
+        this.authService.setAdmin(false);
         this.router.navigate(['/']);
       }
     });
