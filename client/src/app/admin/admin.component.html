@@ -1,6 +1,6 @@
 <h1>User Admin</h1>
-<hr>
-<h2>Current Users</h2>
+<hr class="w-50">
+<h2>Current User List</h2>
 <div class="container w-75" id="usersDiv">
     <table class="table table-striped">
         <thead>
@@ -13,12 +13,12 @@
         </thead>
         <tbody>
             <tr *ngFor="let user of users">
-                <td class="text-black">{{user.id}}</td>
-                <td class="text-black">{{user.user_name}}</td>
-                <td class="text-black">{{user.email}}</td>
-                <td class="text-black text-center">{{user.is_admin}}</td>
-                <td class="text-black text-center"><i class="fas fa-pencil-alt"></i></td>
-                <td class="text-black text-center"><i class="far fa-trash-alt"></i></td>
+                <td>{{user.id}}</td>
+                <td>{{user.user_name}}</td>
+                <td>{{user.email}}</td>
+                <td class="text-center">{{user.is_admin}}</td>
+                <td class="text-center"><i class="fas fa-pencil-alt"></i></td>
+                <td class="text-center"><i class="far fa-trash-alt"></i></td>
             </tr>
         </tbody>
     </table>

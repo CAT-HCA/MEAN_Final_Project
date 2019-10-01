@@ -7,3 +7,15 @@
 	background-repeat: no-repeat;
 	min-height: 300px;
 }
+
+.fab {
+	color: white;
+}
+
+.fab:hover {
+	color: #7c878e;
+}
+
+#followSoc {
+	font-size: 30px;
+}
