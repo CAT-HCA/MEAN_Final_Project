@@ -24,7 +24,19 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() { }
 
+  onReset(): void {
+    this.user_name = '';
+    this.password = '';
+    this.confpassword = '';
+    this.email = '';
+    this.dupId = false;
+    this.errMsg = [];
+    this.registerError = false;
+  }
+
   onRegister(): void {
+    this.dupId = false;
+    this.errMsg = [];
     this.registerError = false;
     if (this.user_name === '' || this.password === '' || this.confpassword === '' || this.email === '') {
       this.errMsg.push("Please fill out all fields");

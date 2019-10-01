@@ -21,9 +21,9 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
     // Redirect to Login Page if not Authenticated and Admin
-    //if (!this.authService.getAdmin()) {
-    //  this.router.navigate(['users/login']);
-    //};
+    if (!this.authService.getAdmin()) {
+      this.router.navigate(['users/login']);
+    };
 
     // call getUsers() method in userService
     this.userService.getUsers().subscribe((data) => {

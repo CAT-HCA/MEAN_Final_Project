@@ -1,50 +1,41 @@
 /*font classes*/
 .montserratFont {
-	font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
-
 .arialFont {
-	font-family: arial, sans-serif;
+  font-family: arial, sans-serif;
 }
-
 .cardBodyText {
-	font-size: 12px;
+  font-size: 12px;
 }
-
 .row {
-	margin-left: -15px !important;
-	margin-right: -15px !important;
+  margin-left: -15px !important;
+  margin-right: -15px !important;
 }
-
 h1 {
-	margin-top: 20px;
-	text-align: center;
-	font-family: "Montserrat", sans-serif;
-	font-weight: bold;
-	color: #182a60;
+  margin-top: 20px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #182a60;
 }
 h2 {
-	margin-top: 20px;
-	text-align: center;
-	font-family: arial, sans-serif;
-	color: #7c878e;
+  margin-top: 20px;
+  text-align: center;
+  font-family: arial, sans-serif;
+  color: #7c878e;
 }
-
 /* formatting for footer*/
 html {
-	position: relative;
-	min-height: 100%;
+  position: relative;
+  min-height: 100%;
 }
-
 body {
-	margin-bottom: 175px;
-	min-height: 100%;
+  margin-bottom: 175px;
+  min-height: 100%;
 }
 footer {
-position: absolute;
-	bottom: 0;
-	width: 100%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
-
-
-
