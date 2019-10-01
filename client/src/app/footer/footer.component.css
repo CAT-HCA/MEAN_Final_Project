@@ -1,13 +1,11 @@
-
-
+/*footer social media links*/
 .fab {
-	color: white;
+  color: white;
 }
-
 .fab:hover {
-	color: #7c878e;
+  color: #7c878e;
 }
 
 #followSoc {
-	font-size: 30px;
+  font-size: 30px;
 }

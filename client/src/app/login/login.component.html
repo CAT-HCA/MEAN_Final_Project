@@ -1,31 +1,30 @@
-
-    <div class="col-xs-12 col-md-5 mx-auto container-fluid">
-        <div class="mx-auto">
-            <form>
-                <fieldset class="border border-primary rounded p-2 my-3">
-                    <legend class="text-center w-25">Login</legend>
-                    <div class="row form-group">
-                        <div class="col-12 form-check">
-                            <label for="user_name">Username:</label>
-                            <input class="form-control" id="user_name" placeholder="Enter your username" type="text"
-                                name="user_name" [(ngModel)]="user_name" required autofocus>
-                        </div>
-                        <div class="col-12 form-check">
-                            <label for="password">Password:</label>
-                            <input class="form-control" id="password" type="password" name="password"
-                                placeholder="Enter your password" required [(ngModel)]="password">
-                        </div>
+<div class="col-xs-12 col-md-5 mx-auto container-fluid">
+    <div class="mx-auto">
+        <form>
+            <fieldset class="border border-primary rounded p-2 my-3">
+                <legend class="text-center w-25">Login</legend>
+                <div class="row form-group">
+                    <div class="col-12 form-check">
+                        <label for="user_name">Username:</label>
+                        <input class="form-control" id="user_name" placeholder="Enter your username" type="text"
+                            name="user_name" [(ngModel)]="user_name" required autofocus>
                     </div>
-                </fieldset>
-                <div class="form-group text-center">
-                    <button type="btn" class="btn btn-primary m-3" (click)="onLogin()" >Login</button>
-                    <input class="btn btn-danger m-3" type="reset" value="Reset">
+                    <div class="col-12 form-check">
+                        <label for="password">Password:</label>
+                        <input class="form-control" id="password" type="password" name="password"
+                            placeholder="Enter your password" required [(ngModel)]="password">
+                    </div>
                 </div>
-            </form>
-            <div class="container mx-auto">
-                <div *ngIf="loginError" class="mx-auto p-3 bg-success border border-success rounded w-100">
-                    <p>{{errMsg}}</p>
-                </div>
+            </fieldset>
+            <div class="form-group text-center">
+                <button type="btn" class="btn btn-primary m-3" (click)="onLogin()">Login</button>
+                <input class="btn btn-danger m-3" type="reset" value="Reset">
+            </div>
+        </form>
+        <div class="container mx-auto">
+            <div *ngIf="loginError" class="mx-auto p-3 bg-success border border-success rounded w-100">
+                <p>{{errMsg}}</p>
             </div>
         </div>
     </div>
+</div>

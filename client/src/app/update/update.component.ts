@@ -25,9 +25,9 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit() {
     // Redirect to Login Page if not Authenticated
-   if (!this.authService.getAuth()) {
+    if (!this.authService.getAuth()) {
       this.router.navigate(['users/login']);
-   }
+    }
     // call get user method to return 1 user by id
     // pass in id param
     this.userService.getUser(this.userService.loginUserId).subscribe(data => {
@@ -36,7 +36,7 @@ export class UpdateComponent implements OnInit {
     });
   };
   onUpdate(): void {
-    // call login() method in AuthService to validate login creds
+    // call update() method
     this.userService.updateUser(this.userService.loginUserId, this.email).subscribe(data => {
       if (data['error']) {
         this.errMsg = 'Unable to update email address.';
@@ -47,15 +47,18 @@ export class UpdateComponent implements OnInit {
       }
     });
   };
+  //on delete button click, show confirm delete div and button
   onReqDel(): void {
     this.updateError = false;
     this.deleteRequest = true;
   };
+  //on cancel delete button click, clear error and hide button
   onDelCancel(): void {
     this.deleteRequest = false;
   };
+  //on cancel confirmation
   onDelConf(): void {
-    // call login() method in AuthService to validate login creds
+    // call delete() method to delete user
     this.userService.delete(this.userService.loginUserId).subscribe(data => {
       if (data['error']) {
         this.errMsg = 'Unable to delete your account.';

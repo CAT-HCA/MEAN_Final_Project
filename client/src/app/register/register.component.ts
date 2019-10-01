@@ -24,6 +24,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() { }
 
+  //on reset click event - clears out form fields and errors
   onReset(): void {
     this.user_name = '';
     this.password = '';
@@ -34,22 +35,26 @@ export class RegisterComponent implements OnInit {
     this.registerError = false;
   }
 
+  //on register click event
   onRegister(): void {
     this.dupId = false;
     this.errMsg = [];
     this.registerError = false;
+    //if any fields are empty
     if (this.user_name === '' || this.password === '' || this.confpassword === '' || this.email === '') {
       this.errMsg.push("Please fill out all fields");
     }
+    //if passwords don't match
     if (this.password != this.confpassword) {
       this.errMsg.push("Passwords do not match");
     }
+    //if there are errors
     if (this.errMsg.length > 0) {
       this.registerError = true;
     } else {
       this.registerError = false;
       this.dupId = false;
-      // call login() method in AuthService to validate login creds
+      // call register() method in AuthService to validate register creds
       this.userService.register(this.user_name, this.password, this.email).subscribe(data => {
         if (data['error']) {
           this.errMsg.push("Unable to register user.");

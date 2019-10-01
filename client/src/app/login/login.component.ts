@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  //on Login button click
   onLogin(): void {
     this.loginError = false;
     if (this.user_name === '' || this.password === '') {
@@ -34,19 +35,22 @@ export class LoginComponent implements OnInit {
       this.errMsg = '';
       // call login() method in AuthService to validate login creds
       this.userService.login(this.user_name, this.password).subscribe(data => {
-        console.log(data);
+        //if unsuccessful, show error
         if (data['error']) {
           this.errMsg = 'Login unsuccessful.';
           this.loginError = true;
           this.authService.setAuth(false);
           this.authService.setAdmin(false);
         } else {
+          //if successful, no errors, set authentication
           this.loginError = false;
           this.authService.setAuth(true);
+          //if not Admin, set admin false
           if (data.is_admin == false) {
             this.userService.loginUserId = data.id;
             this.authService.setAdmin(false);
           }
+          //if Admin, set admin true
           else {
             this.userService.loginUserId = data.id;
             this.authService.setAdmin(true);

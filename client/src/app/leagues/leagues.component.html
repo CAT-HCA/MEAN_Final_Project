@@ -6,7 +6,7 @@
                 <p class="montserratFont text-white text-center mt-2">Actions:</p>
                 <hr class="bg-white">
                 <div class="text-center">
-                    <a class="text-white text-center btn btn-danger my-2" disabled >Add a
+                    <a class="text-white text-center btn btn-danger my-2" disabled>Add a
                         New
                         Section</a>
                     <button class="text-white text-center btn btn-secondary my-2">Show All
@@ -51,7 +51,8 @@
     <div class="col-xs-12 col-lg-9 mx-auto container-fluid">
         <div class="text-center">
             <h2 *ngIf="noSections" class="montserratFont mt-5">There are currently no registered Sections</h2>
-            <div id="sectionCardDiv" *ngFor="let team of teams" class="card col-12 col-md-6 col-xl-3 float-left m-4 .d-flex">
+            <div id="sectionCardDiv" *ngFor="let team of teams"
+                class="card col-12 col-md-6 col-xl-3 float-left m-4 .d-flex">
                 <img class="card-img-top cardImages" src="/assets/images/section_photos/{{team.Picture}}"
                     alt="Marching Band Member">
                 <div class="card-header">
